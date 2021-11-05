@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CloudCompare>
+    <ColorScale version="1">
+        <Properties>
+            <name>KBGYRW</name>
+            <uuid>{5a2c0e52-5ad4-4cc7-9be2-815f55ecb971}</uuid>
+            <absolute>1</absolute>
+            <minValue>0</minValue>
+            <range>1</range>
+        </Properties>
+        <Data>
+	    <step r="64" g="64" b="64" pos="0"/>
+            <step r="0" g="0" b="255" pos="0.05"/>
+            <step r="0" g="255" b="0" pos="0.1"/>
+            <step r="255" g="255" b="0" pos="0.15"/>
+            <step r="255" g="0" b="255" pos="0.2"/>
+	    <step r="255" g="0" b="0" pos="0.25"/>
+	    <step r="255" g="0" b="0" pos="1"/>
+        </Data>
+    </ColorScale>
+</CloudCompare>

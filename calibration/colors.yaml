@@ -1,0 +1,12 @@
+Version: 1
+Semantic:
+  Unknown: [0, 0, 0]
+  Grass: [0,   0.8, 0  ] 
+  Ground: [0.3, 0.5, 0  ]
+  Pavement: [0.7, 0.8, 0.9]
+  Hedge: [0.5, 0.5, 0  ]
+  Topiary: [0, 0.7, 0.7]
+  Rose: [0.9, 0, 0 ]
+  Obstacle: [0.2, 0.2, 0.9]
+  Tree: [0.3, 0.7, 0.1]
+  Background: [0.1, 0.1, 0.1]

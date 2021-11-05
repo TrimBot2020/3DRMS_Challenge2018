@@ -1,0 +1,1044 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="GENERATOR" content="LyX 2.3.0" />
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<title>LyX Document</title>
+
+<!-- Preamble Snippets -->
+\makesavenoteenv{tabular}
+
+
+<style type='text/css'>
+/* Layout-provided Styles */
+div.title {
+font-weight: bold;
+font-size: xx-large;
+margin-bottom: 1ex;
+text-align: center;
+
+}
+div.plain_layout {
+text-align: left;
+
+}
+div.subtitle {
+font-weight: bold;
+font-size: large;
+margin-bottom: 1ex;
+text-align: center;
+
+}
+div.author {
+font-size: x-large;
+margin-top: 1.3ex;
+margin-bottom: 0.7ex;
+text-align: center;
+
+}
+div.institute {
+font-size: large;
+margin-top: 0.9ex;
+margin-bottom: 0.5ex;
+text-align: center;
+
+}
+div.date {
+font-size: x-large;
+margin-top: 0.9ex;
+margin-bottom: 0.5ex;
+text-align: center;
+
+}
+div.standard {
+text-align: left;
+
+}
+div.frame {
+margin-top: 1ex;
+margin-bottom: 1ex;
+margin-left: 2ex;
+text-align: left;
+
+}
+span.frame_label {
+font-family: serif;
+font-size: x-large;
+
+}
+div.itemize {
+margin-top: 0.7ex;
+margin-bottom: 0.7ex;
+margin-left: 3ex;
+text-align: left;
+
+}
+div.section {
+font-family: serif;
+font-weight: bold;
+font-size: xx-large;
+margin-top: 2ex;
+margin-bottom: 0.25ex;
+text-align: left;
+
+}
+span.section_label {
+font-family: serif;
+font-weight: bold;
+font-size: xx-large;
+
+}
+div.columns {
+margin-top: 1ex;
+margin-bottom: 1ex;
+margin-left: 9ex;
+text-align: left;
+
+}
+span.columns_label {
+font-family: serif;
+
+}
+div.column {
+margin-top: 1ex;
+margin-bottom: 1ex;
+margin-left: 40ex;
+text-align: left;
+
+}
+span.column_label {
+font-family: serif;
+
+}
+table {
+	border-collapse: collapse;
+	display: inline-block;
+}
+td {
+	border: 1px solid black;
+	padding: 0.5ex;
+}
+span.foot_label {
+	vertical-align: super;
+	font-size: smaller;
+	font-weight: bold;
+	text-decoration: underline;
+}
+div.foot {
+	display: inline;
+	font-size: small;
+	font-weight: medium;
+	font-family: serif;
+	font-variant: normal;
+	font-style: normal;
+}
+div.foot_inner { display: none; }
+div.foot:hover div.foot_inner {
+	display: block;
+	border: 1px double black;
+	margin: 0em 1em;
+	padding: 1em;
+}
+
+
+</style>
+</head>
+<body dir="auto">
+<div class="title" id='magicparlabel-1'><span style='font-family:sans-serif;'>3D Reconstruction Meets Semantics </span></div>
+<div class="subtitle" id='magicparlabel-6'><span style='font-family:sans-serif;'>Reconstruction Challenge 2018</span></div>
+<div class="author" id='magicparlabel-7'><span style='font-family:sans-serif;'>Radim Tyleek, Torsten Sattler,
+<br />
+
+ Thomas Brox, Marc Pollefeys, Robert B. Fisher, Theo Gevers</span></div>
+<div class="institute" id='magicparlabel-16'><span style='font-family:sans-serif;'>EU project TrimBot2020 </span></div>
+<div class="date" id='magicparlabel-17'><span style='font-family:sans-serif;'>ECCV 2018 Workshop, Munich</span></div>
+
+
+
+
+
+
+<div class="frame" id='magicparlabel-34'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+
+<div class="itemize" id='magicparlabel-39'><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Challenge Goals</span></div>
+<div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Garden Dataset </span></div>
+<div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Evaluation</span></div>
+<div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Results</span></div>
+</div>
+<div class="frame_item"></div>
+<div class="frame_item"></div>
+</div>
+<div class="section" id='magicparlabel-49'><span class="section_label">Section 1</span> Challenge Goals</div>
+
+<div class="frame" id='magicparlabel-50'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+
+<div class="itemize" id='magicparlabel-55'><div class="itemize_item"><span class="itemize_label">•</span>
+<b><span style='font-family:sans-serif;'>Input</span></b><span style='font-family:sans-serif;'>: Set of images and known camera poses</span></div>
+<div class="itemize_item"><span class="itemize_label">•</span>
+<b><span style='font-family:sans-serif;'>Goal</span></b><span style='font-family:sans-serif;'>: Create a semantically annotated 3D model of the scene</span>
+
+<div class="itemize" id='magicparlabel-57'><div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Compute depth maps for the images</span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Fuse them together into a single 3D model</span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Incorporate information from the semantics</span></div>
+</div>
+</div><div class="itemize_item"><span class="itemize_label">•</span>
+<b><span style='font-family:sans-serif;'>Categories</span></b><span style='font-family:sans-serif;'>: Semantics/Geometry, Synthetic/Real</span></div>
+</div>
+<div class="frame_item"><span style='font-family:sans-serif;'><img style=' height:3cm;' src='0_home_radim_Documents_proj_TrimBot_Challenge20___ting_clear_0288_vcam_0_vcam_0_f00001_undist.png' alt='image: 0_home_radim_Documents_proj_TrimBot_Challenge20___ting_clear_0288_vcam_0_vcam_0_f00001_undist.png' />
+&nbsp;<math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo> &rArr; </mo>
+ </mrow></math>&nbsp;<img style=' height:3cm;' src='1_home_radim_Documents_proj_TrimBot_Challenge2018_results_HAB_HAB_0288.png' alt='image: 1_home_radim_Documents_proj_TrimBot_Challenge2018_results_HAB_HAB_0288.png' />
+</span></div>
+</div>
+<div class="section" id='magicparlabel-62'><span class="section_label">Section 2</span> Garden Dataset</div>
+
+<div class="frame" id='magicparlabel-63'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+<div class="frame_item"></div>
+
+<div class="columns" id='magicparlabel-69'><div class="columns_item"><span class="columns_label">Columns</span>
+</div>
+</div>
+</div>
+<div class="column" id='magicparlabel-70'><span class="column_label">Start column (increase depth!), width:</span> <span style='font-family:sans-serif;'>8cm</span></div>
+
+<div class="itemize" id='magicparlabel-71'><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Four <b>training</b> scenes with 20 sequences </span>
+
+<div class="itemize" id='magicparlabel-72'><div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Total 20k synthetic images</span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Ground truth semantic annotations and depth maps</span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>A semantically annotated 3D point cloud</span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Different environment for each sequence (clear, cloudy, overcast, sunset, twilight)</span></div>
+</div>
+</div><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>A <b>testing</b> scene with 5 sequences</span>
+
+<div class="itemize" id='magicparlabel-77'><div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>5k synthetic images with camera poses</span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Ground truth for evaluation only</span></div>
+</div>
+</div><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>A <b>validation</b> sequence (2017 dataset)</span>
+
+<div class="itemize" id='magicparlabel-80'><div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>500 real images with camera poses and calibration</span></div>
+</div>
+</div></div>
+<div class="column" id='magicparlabel-81'><span class="column_label">Start column (increase depth!), width:</span> <span style='font-family:sans-serif;'>4cm</span></div>
+
+<div class="columns" id='magicparlabel-82'><div class="columns_item"><span class="columns_label">Columns</span>
+<span style='font-family:sans-serif;'><img style='width:100%;' src='2_home_radim_Documents_proj_TrimBot_Challenge2018_testing_cams-288-top.png' alt='image: 2_home_radim_Documents_proj_TrimBot_Challenge2018_testing_cams-288-top.png' />
+</span></div>
+<div class="columns_item"><em><span style='font-family:sans-serif;'>Randomly generated trajectories for the test scene (unique color for each sequence)</span></em></div>
+</div>
+
+<div class="standard" id='magicparlabel-84'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-85'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+
+<div class="itemize" id='magicparlabel-90'><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Pentagonal camera rig with 10 cameras </span></div>
+<div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Synthetic data: 5 camera pairs</span>
+
+<div class="itemize" id='magicparlabel-92'><div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>VGA resolution (640x480), color</span></div>
+</div>
+</div><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Real data: 2 camera pairs (0-1, 2-3)</span>
+
+<div class="itemize" id='magicparlabel-94'><div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>WVGA resolution (752x480), color/greyscale</span></div>
+</div>
+</div></div>
+<div class="standard" id='magicparlabel-95'><span style='font-family:sans-serif;'><img style='width:40%;' src='3_home_radim_Documents_proj_TrimBot_Challenge2018_report_cam_integration.jpg' alt='image: 3_home_radim_Documents_proj_TrimBot_Challenge2018_report_cam_integration.jpg' />
+<img style='width:40%;' src='4_home_radim_Documents_proj_TrimBot_Challenge2018_report_cam_setup_3.png' alt='image: 4_home_radim_Documents_proj_TrimBot_Challenge2018_report_cam_setup_3.png' />
+</span></div>
+</div>
+
+<div class="standard" id='magicparlabel-96'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-97'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+<div class="frame_item"></div>
+
+<div class="columns" id='magicparlabel-103'><div class="columns_item"><span class="columns_label">Columns</span>
+</div>
+</div>
+</div>
+<div class="column" id='magicparlabel-104'><span class="column_label">Start column (increase depth!), width:</span> <span style='font-family:sans-serif;'>6cm</span></div>
+
+<div class="itemize" id='magicparlabel-105'><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Set of 9 classes we distinguish</span>
+
+<div class="itemize" id='magicparlabel-106'><div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Grass (light green)</span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Ground (brown)</span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Pavement (grey)</span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Hedge (ochre) </span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Topiary (cyan)</span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Rose (red)</span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Obstacle (blue) </span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Tree (dark green) </span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Background (black)</span></div>
+</div>
+</div><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Depth map from projected points</span></div>
+</div>
+<div class="column" id='magicparlabel-116'><span class="column_label">Start column (increase depth!), width:</span> <span style='font-family:sans-serif;'>5cm</span></div>
+
+<div class="columns" id='magicparlabel-117'><div class="columns_item"><span class="columns_label">Columns</span>
+<span style='font-family:sans-serif;'><img style='width:100%;' src='5_home_radim_Documents_proj_TrimBot_Challenge20___ing_overcast_0001_vcam_0_vcam_0_f00001_over.png' alt='image: 5_home_radim_Documents_proj_TrimBot_Challenge20___ing_overcast_0001_vcam_0_vcam_0_f00001_over.png' />
+</span></div>
+<div class="columns_item"><span style='font-family:sans-serif;'><img style='width:100%;' src='6_home_radim_Documents_proj_TrimBot_Challenge20___ing_overcast_0001_vcam_0_vcam_0_f00001_dmap.png' alt='image: 6_home_radim_Documents_proj_TrimBot_Challenge20___ing_overcast_0001_vcam_0_vcam_0_f00001_dmap.png' />
+</span></div>
+</div>
+
+<div class="standard" id='magicparlabel-119'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-120'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+
+
+<div class="standard" id='magicparlabel-125'><span style='font-family:sans-serif;'><table><tbody><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-138'><span style='font-family:sans-serif;'><img style='width:40%;' src='7_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0001_rgb.png' alt='image: 7_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0001_rgb.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-141'><span style='font-family:sans-serif;'><img style='width:40%;' src='8_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0128_rgb.png' alt='image: 8_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0128_rgb.png' />
+</span></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-144'><span style='font-family:sans-serif;'><img style='width:40%;' src='9_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0160_rgb.png' alt='image: 9_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0160_rgb.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-147'><span style='font-family:sans-serif;'><img style='width:40%;' src='10_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0224_rgb.png' alt='image: 10_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0224_rgb.png' />
+</span></div>
+</td>
+</tr></tbody>
+</table>
+</span></div>
+<div class="frame_item"><em><span style='font-family:sans-serif;'>Dataset rendered by Hoang-An Le (UvA)</span></em></div>
+</div>
+
+<div class="standard" id='magicparlabel-149'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-150'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+
+
+<div class="standard" id='magicparlabel-155'><span style='font-family:sans-serif;'><table><tbody><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-168'><span style='font-family:sans-serif;'><img style='width:40%;' src='11_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0001_sem.png' alt='image: 11_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0001_sem.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-171'><span style='font-family:sans-serif;'><img style='width:40%;' src='12_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0128_sem.png' alt='image: 12_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0128_sem.png' />
+</span></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-174'><span style='font-family:sans-serif;'><img style='width:40%;' src='13_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0160_sem.png' alt='image: 13_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0160_sem.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-177'><span style='font-family:sans-serif;'><img style='width:40%;' src='14_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0224_sem.png' alt='image: 14_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0224_sem.png' />
+</span></div>
+</td>
+</tr></tbody>
+</table>
+</span></div>
+<div class="frame_item"><em><span style='font-family:sans-serif;'>Dataset rendered by Hoang-An Le (UvA)</span></em></div>
+</div>
+
+<div class="standard" id='magicparlabel-179'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-180'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+<div class="standard" id='magicparlabel-185'><span style='font-family:sans-serif;'><img style='width:100%;' src='15_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0288.png' alt='image: 15_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0288.png' />
+</span></div>
+<div class="frame_item"><em><span style='font-family:sans-serif;'>Dataset rendered by Hoang-An Le (UvA)</span></em></div>
+</div>
+
+<div class="standard" id='magicparlabel-187'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-188'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+<div class="standard" id='magicparlabel-193'><span style='font-family:sans-serif;'><img style='width:100%;' src='16_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_real.png' alt='image: 16_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_real.png' />
+</span></div>
+</div>
+<div class="section" id='magicparlabel-194'><span class="section_label">Section 3</span> Evaluation and Results</div>
+
+<div class="frame" id='magicparlabel-195'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+
+
+<div class="standard" id='magicparlabel-200'><span style='font-family:sans-serif;'><table><tbody><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-213'><span style='font-family:sans-serif;'><img style='width:50%;' src='17_home_radim_Documents_proj_TrimBot_Challenge2018_results_dtis_dtis_0288.png' alt='image: 17_home_radim_Documents_proj_TrimBot_Challenge2018_results_dtis_dtis_0288.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-216'><span style='font-family:sans-serif;'><img style='width:50%;' src='15_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0288.png' alt='image: 15_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0288.png' />
+</span></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-219'><span style='font-family:sans-serif;'>DTIS</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-222'><span style='font-family:sans-serif;'>GT</span></div>
+</td>
+</tr></tbody>
+</table>
+</span></div>
+</div>
+
+<div class="standard" id='magicparlabel-223'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-224'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+
+
+<div class="standard" id='magicparlabel-229'><span style='font-family:sans-serif;'><table><tbody><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-242'><span style='font-family:sans-serif;'><img style='width:50%;' src='1_home_radim_Documents_proj_TrimBot_Challenge2018_results_HAB_HAB_0288.png' alt='image: 1_home_radim_Documents_proj_TrimBot_Challenge2018_results_HAB_HAB_0288.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-245'><span style='font-family:sans-serif;'><img style='width:50%;' src='15_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0288.png' alt='image: 15_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0288.png' />
+</span></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-248'><span style='font-family:sans-serif;'>HAB</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-251'><span style='font-family:sans-serif;'>GT</span></div>
+</td>
+</tr></tbody>
+</table>
+</span></div>
+</div>
+
+<div class="standard" id='magicparlabel-252'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-253'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+
+
+<div class="standard" id='magicparlabel-258'><span style='font-family:sans-serif;'><table><tbody><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-271'><span style='font-family:sans-serif;'><img style='width:50%;' src='18_home_radim_Documents_proj_TrimBot_Challenge2018_results_lapsi360_lapsi360_0288.png' alt='image: 18_home_radim_Documents_proj_TrimBot_Challenge2018_results_lapsi360_lapsi360_0288.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-274'><span style='font-family:sans-serif;'><img style='width:50%;' src='15_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0288.png' alt='image: 15_home_radim_Documents_proj_TrimBot_Challenge2018_gt_model_10mm_0288.png' />
+</span></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-277'><span style='font-family:sans-serif;'>LAPSI</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-280'><span style='font-family:sans-serif;'>GT</span></div>
+</td>
+</tr></tbody>
+</table>
+</span></div>
+</div>
+
+<div class="standard" id='magicparlabel-281'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-282'><div class="frame_item"><span class="frame_label">Frame</span>
+</div>
+<div class="frame_item"><span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+
+<div class="itemize" id='magicparlabel-288'><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Test GT </span>
+
+<div class="itemize" id='magicparlabel-289'><div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>delimited by the bounding box of the test area </span></div>
+</div>
+</div><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>3D geometry</span>
+
+<div class="itemize" id='magicparlabel-291'><div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Submissions cropped to bounding box +1 m</span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Cumulative histograms of distances (mesh <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo> &rlarr; </mo>
+ </mrow></math> GT points)</span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<b><span style='font-family:sans-serif;'>Accuracy</span></b><span style='font-family:sans-serif;'> is distance <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>d</mi>
+ </mrow></math> (in m) such that 90% of the reconstruction is within <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mi>d</mi>
+ </mrow></math> of the ground truth mesh</span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<b><span style='font-family:sans-serif;'>Completeness</span></b><span style='font-family:sans-serif;'> is the percent of points in the GT point cloud that are within 5 cm of the reconstruction</span></div>
+</div>
+</div><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Semantics</span>
+
+<div class="itemize" id='magicparlabel-296'><div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Labels assigned to vertices or faces of the 3D model</span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Projected to all test images </span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<b><span style='font-family:sans-serif;'>Prediction accuracy</span></b><span style='font-family:sans-serif;'> of the pixels corresponding to the 3D test part</span></div>
+</div>
+</div></div>
+<div class="frame_item"></div>
+</div>
+
+<div class="standard" id='magicparlabel-300'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-301'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+
+
+<div class="standard" id='magicparlabel-306'><span style='font-family:sans-serif;'><table><tbody><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-329'><span style='font-family:sans-serif;'><img style='width:30%;' src='19_home_radim_Documents_proj_TrimBot_Challenge2018_results_dtis_dtis_0288-acc.png' alt='image: 19_home_radim_Documents_proj_TrimBot_Challenge2018_results_dtis_dtis_0288-acc.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-332'><span style='font-family:sans-serif;'><img style='width:30%;' src='20_home_radim_Documents_proj_TrimBot_Challenge2018_results_HAB_HAB_0288-acc.png' alt='image: 20_home_radim_Documents_proj_TrimBot_Challenge2018_results_HAB_HAB_0288-acc.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-335'><span style='font-family:sans-serif;'><img style='width:30%;' src='21_home_radim_Documents_proj_TrimBot_Challenge2018_results_colmap_colmap_0288-acc.png' alt='image: 21_home_radim_Documents_proj_TrimBot_Challenge2018_results_colmap_colmap_0288-acc.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-338'><span style='font-family:sans-serif;'>Accuracy</span></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-341'><span style='font-family:sans-serif;'>DTIS</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-344'><span style='font-family:sans-serif;'>HAB</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-347'><span style='font-family:sans-serif;'>COLMAP<div class="foot"><span class="foot_label">1</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-351'><span style='font-family:sans-serif;'> Schönberger et al.: Structure-from-motion revisited. CVPR, 2016. </span></div>
+</div></div> (baseline)</span></div>
+</td>
+<td align='center' valign='top'>
+
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-361'><span style='font-family:sans-serif;'><img style='width:30%;' src='22_home_radim_Documents_proj_TrimBot_Challenge2018_results_dtis_dtis_0288-comp.png' alt='image: 22_home_radim_Documents_proj_TrimBot_Challenge2018_results_dtis_dtis_0288-comp.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-364'><span style='font-family:sans-serif;'><img style='width:30%;' src='23_home_radim_Documents_proj_TrimBot_Challenge2018_results_HAB_HAB_0288-comp.png' alt='image: 23_home_radim_Documents_proj_TrimBot_Challenge2018_results_HAB_HAB_0288-comp.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-367'><span style='font-family:sans-serif;'><img style='width:30%;' src='24_home_radim_Documents_proj_TrimBot_Challenge2018_results_colmap_colmap_0288-comp.png' alt='image: 24_home_radim_Documents_proj_TrimBot_Challenge2018_results_colmap_colmap_0288-comp.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-370'><span style='font-family:sans-serif;'>Completeness</span></div>
+</td>
+</tr></tbody>
+</table>
+</span></div>
+
+<div class="itemize" id='magicparlabel-371'><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Distances [0-1m]: Cold colors indicate well reconstructed segments</span></div>
+<div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Hot colors indicate noisy surface (accuracy) or missing parts (completeness).</span></div>
+</div>
+</div>
+
+<div class="standard" id='magicparlabel-373'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-374'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+<div class="standard" style='text-align: center;' id='magicparlabel-379'><span style='font-family:sans-serif;'><img style='width:45%;' src='25_home_radim_Documents_proj_TrimBot_Challenge2018_results_test-stats-acc.png' alt='image: 25_home_radim_Documents_proj_TrimBot_Challenge2018_results_test-stats-acc.png' />
+<img style='width:45%;' src='26_home_radim_Documents_proj_TrimBot_Challenge2018_results_test-stats-comp.png' alt='image: 26_home_radim_Documents_proj_TrimBot_Challenge2018_results_test-stats-comp.png' />
+</span></div>
+
+<div class="itemize" id='magicparlabel-380'><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Cumulative plots of distances (mesh <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo> &rlarr; </mo>
+ </mrow></math> GT points)</span></div>
+</div>
+</div>
+
+<div class="standard" id='magicparlabel-381'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-382'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+<div class="standard" style='text-align: center;' id='magicparlabel-387'><span style='font-family:sans-serif;'><img style='width:45%;' src='27_home_radim_Documents_proj_TrimBot_Challenge2018_results_real-stats-acc.png' alt='image: 27_home_radim_Documents_proj_TrimBot_Challenge2018_results_real-stats-acc.png' />
+<img style='width:45%;' src='28_home_radim_Documents_proj_TrimBot_Challenge2018_results_real-stats-comp.png' alt='image: 28_home_radim_Documents_proj_TrimBot_Challenge2018_results_real-stats-comp.png' />
+</span></div>
+
+<div class="itemize" id='magicparlabel-388'><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Cumulative plots of distances (mesh <math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mrow><mo> &rlarr; </mo>
+ </mrow></math> GT points)</span></div>
+</div>
+</div>
+
+<div class="standard" id='magicparlabel-389'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-390'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+
+
+<div class="standard" id='magicparlabel-395'><span style='font-family:sans-serif;'><table><tbody><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-418'><span style='font-family:sans-serif;'><img style='width:30%;' src='29_home_radim_Documents_proj_TrimBot_Challenge2___dtis_clear_0288_vcam_0_vcam_0_f00001_undist.png' alt='image: 29_home_radim_Documents_proj_TrimBot_Challenge2___dtis_clear_0288_vcam_0_vcam_0_f00001_undist.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-421'><span style='font-family:sans-serif;'><img style='width:30%;' src='30_home_radim_Documents_proj_TrimBot_Challenge2____HAB_clear_0288_vcam_0_vcam_0_f00001_undist.png' alt='image: 30_home_radim_Documents_proj_TrimBot_Challenge2____HAB_clear_0288_vcam_0_vcam_0_f00001_undist.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-424'><span style='font-family:sans-serif;'><img style='width:30%;' src='31_home_radim_Documents_proj_TrimBot_Challenge2___clear_0288_vcam_0_vcam_0_f00001_undist_flip.png' alt='image: 31_home_radim_Documents_proj_TrimBot_Challenge2___clear_0288_vcam_0_vcam_0_f00001_undist_flip.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-427'><span style='font-family:sans-serif;'>Prediction</span></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-430'><span style='font-family:sans-serif;'>DTIS</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-433'><span style='font-family:sans-serif;'>HAB</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-436'><span style='font-family:sans-serif;'>SegNet<div class="foot"><span class="foot_label">2</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-440'><span style='font-family:sans-serif;'> Badrinarayanan et al.: SegNet: A deep convolutional encoder-decoder architecture for image segmentation. PAMI, 2017.</span></div>
+</div></div> (baseline)</span></div>
+</td>
+<td align='center' valign='top'>
+
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-450'><span style='font-family:sans-serif;'><img style='width:30%;' src='32_home_radim_Documents_proj_TrimBot_Challenge2___ts_dtis_clear_0288_vcam_0_vcam_0_f00001_err.png' alt='image: 32_home_radim_Documents_proj_TrimBot_Challenge2___ts_dtis_clear_0288_vcam_0_vcam_0_f00001_err.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-453'><span style='font-family:sans-serif;'><img style='width:30%;' src='33_home_radim_Documents_proj_TrimBot_Challenge2___lts_HAB_clear_0288_vcam_0_vcam_0_f00001_err.png' alt='image: 33_home_radim_Documents_proj_TrimBot_Challenge2___lts_HAB_clear_0288_vcam_0_vcam_0_f00001_err.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-456'><span style='font-family:sans-serif;'><img style='width:30%;' src='34_home_radim_Documents_proj_TrimBot_Challenge2___rImgNet_clear_0288_vcam_0_vcam_0_f00001_err.png' alt='image: 34_home_radim_Documents_proj_TrimBot_Challenge2___rImgNet_clear_0288_vcam_0_vcam_0_f00001_err.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-459'><span style='font-family:sans-serif;'>Error mask</span></div>
+</td>
+</tr></tbody>
+</table>
+</span></div>
+
+<div class="itemize" id='magicparlabel-460'><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Error: <em>red</em> incorrect pixels, <em>grey</em> correct, <em>black</em> not evaluated</span></div>
+<div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>SegNet: pre-trained with ImageNet + challenge training set</span></div>
+</div>
+</div>
+
+<div class="standard" id='magicparlabel-462'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-463'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+
+
+<div class="standard" id='magicparlabel-468'><span style='font-family:sans-serif;'><table><tbody><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-491'><span style='font-family:sans-serif;'><img style='width:30%;' src='35_home_radim_Documents_proj_TrimBot_Challenge2018_gt_clear_0288_vcam_0_vcam_0_f00001_gtr.png' alt='image: 35_home_radim_Documents_proj_TrimBot_Challenge2018_gt_clear_0288_vcam_0_vcam_0_f00001_gtr.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-494'><span style='font-family:sans-serif;'><img style='width:30%;' src='35_home_radim_Documents_proj_TrimBot_Challenge2018_gt_clear_0288_vcam_0_vcam_0_f00001_gtr.png' alt='image: 35_home_radim_Documents_proj_TrimBot_Challenge2018_gt_clear_0288_vcam_0_vcam_0_f00001_gtr.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-497'><span style='font-family:sans-serif;'><img style='width:30%;' src='35_home_radim_Documents_proj_TrimBot_Challenge2018_gt_clear_0288_vcam_0_vcam_0_f00001_gtr.png' alt='image: 35_home_radim_Documents_proj_TrimBot_Challenge2018_gt_clear_0288_vcam_0_vcam_0_f00001_gtr.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-500'><span style='font-family:sans-serif;'>GT</span></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-503'><span style='font-family:sans-serif;'>DTIS</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-506'><span style='font-family:sans-serif;'>HAB</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-509'><span style='font-family:sans-serif;'>SegNet<div class="foot"><span class="foot_label">3</span><div class="foot_inner"><div class="plain_layout" id='magicparlabel-513'><span style='font-family:sans-serif;'> Badrinarayanan et al.: SegNet: A deep convolutional encoder-decoder architecture for image segmentation. PAMI, 2017.</span></div>
+</div></div> (baseline)</span></div>
+</td>
+<td align='center' valign='top'>
+
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-523'><span style='font-family:sans-serif;'><img style='width:30%;' src='32_home_radim_Documents_proj_TrimBot_Challenge2___ts_dtis_clear_0288_vcam_0_vcam_0_f00001_err.png' alt='image: 32_home_radim_Documents_proj_TrimBot_Challenge2___ts_dtis_clear_0288_vcam_0_vcam_0_f00001_err.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-526'><span style='font-family:sans-serif;'><img style='width:30%;' src='33_home_radim_Documents_proj_TrimBot_Challenge2___lts_HAB_clear_0288_vcam_0_vcam_0_f00001_err.png' alt='image: 33_home_radim_Documents_proj_TrimBot_Challenge2___lts_HAB_clear_0288_vcam_0_vcam_0_f00001_err.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-529'><span style='font-family:sans-serif;'><img style='width:30%;' src='34_home_radim_Documents_proj_TrimBot_Challenge2___rImgNet_clear_0288_vcam_0_vcam_0_f00001_err.png' alt='image: 34_home_radim_Documents_proj_TrimBot_Challenge2___rImgNet_clear_0288_vcam_0_vcam_0_f00001_err.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-532'><span style='font-family:sans-serif;'>Error mask</span></div>
+</td>
+</tr></tbody>
+</table>
+</span></div>
+
+<div class="itemize" id='magicparlabel-533'><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Error: <em>red</em> incorrect pixels, <em>grey</em> correct, <em>black</em> not evaluated</span></div>
+<div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>SegNet: pre-trained with ImageNet + challenge training set</span></div>
+</div>
+</div>
+
+<div class="standard" id='magicparlabel-535'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-536'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+
+
+<div class="standard" id='magicparlabel-541'><span style='font-family:sans-serif;'><table><tbody><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-560'><span style='font-family:sans-serif;'><img style='width:30%;' src='36_home_radim_Documents_proj_TrimBot_Challenge2018_results_dtis_test-sem-all-conf.png' alt='image: 36_home_radim_Documents_proj_TrimBot_Challenge2018_results_dtis_test-sem-all-conf.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-563'><span style='font-family:sans-serif;'><img style='width:30%;' src='37_home_radim_Documents_proj_TrimBot_Challenge2018_results_HAB_test-sem-all-conf.png' alt='image: 37_home_radim_Documents_proj_TrimBot_Challenge2018_results_HAB_test-sem-all-conf.png' />
+</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-566'><span style='font-family:sans-serif;'><img style='width:30%;' src='38_home_radim_Documents_proj_TrimBot_Challenge2018_results_snfull-frImgNet_test-sem-all-conf.png' alt='image: 38_home_radim_Documents_proj_TrimBot_Challenge2018_results_snfull-frImgNet_test-sem-all-conf.png' />
+</span></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-569'><b><span style='font-family:sans-serif;'>91.1%</span></b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-572'><span style='font-family:sans-serif;'>79.0%</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-575'><span style='font-family:sans-serif;'>90.2%</span></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-578'><span style='font-family:sans-serif;'>DTIS</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-581'><span style='font-family:sans-serif;'>HAB</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-584'><span style='font-family:sans-serif;'>SegNet (baseline)</span></div>
+</td>
+</tr></tbody>
+</table>
+</span></div>
+
+<div class="itemize" id='magicparlabel-585'><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Confusion matrix: <em>dark </em>on diagonal indicates good match of the prediction with GT labels</span></div>
+<div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Semantic accuracy: pixelwise ratio of correct predictions over all test images</span></div>
+</div>
+</div>
+
+<div class="standard" id='magicparlabel-587'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-588'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+
+
+<div class="standard" style='text-align: center;' id='magicparlabel-593'><span style='font-family:sans-serif;'><table><tbody><tr><td align='center' valign='middle' rowspan='2'>
+<div class="plain_layout" id='magicparlabel-628'><em><span style='font-family:sans-serif;'>Method</span></em></div>
+</td>
+<td align='center' valign='top' colspan='2'>
+<div class="plain_layout" id='magicparlabel-631'><span style='font-family:sans-serif;'>3D Reconstruction</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-637'><em><span style='font-family:sans-serif;'>Semantic</span></em></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-643'><em><span style='font-family:sans-serif;'>Accuracy</span></em></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-646'><em><span style='font-family:sans-serif;'>Completeness</span></em></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-649'><em><span style='font-family:sans-serif;'>Accuracy</span></em></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-652'><span style='font-family:sans-serif;'>DTIS</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-655'><span style='font-family:sans-serif;'>0.122 m</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-658'><span style='font-family:sans-serif;'>66.2 %</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-661'><b><span style='font-family:sans-serif;'>91.1 %</span></b></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-664'><span style='font-family:sans-serif;'>HAB</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-667'><b><span style='font-family:sans-serif;'>0.069 m</span></b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-670'><b><span style='font-family:sans-serif;'>74.0 %</span></b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-673'><span style='font-family:sans-serif;'>79.0 %</span></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-676'><span style='font-family:sans-serif;'>LAPSI</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-679'><span style='font-family:sans-serif;'>0.164 m</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-682'><span style='font-family:sans-serif;'>23.9 %</span></div>
+</td>
+<td align='center' valign='top'>
+
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-688'><span style='font-family:sans-serif;'>Baseline</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-691'><em><span style='font-family:sans-serif;'>0.097 m</span></em></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-694'><em><span style='font-family:sans-serif;'>86.4 %</span></em></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-697'><em><span style='font-family:sans-serif;'>90.2 %</span></em></div>
+</td>
+</tr></tbody>
+</table>
+</span></div>
+
+<div class="standard" style='text-align: center;' id='magicparlabel-698'><span style='font-family:sans-serif;'>Test set (Synthetic data)</span></div>
+</div>
+
+<div class="standard" id='magicparlabel-699'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-700'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+
+
+<div class="standard" style='text-align: center;' id='magicparlabel-705'><span style='font-family:sans-serif;'><table><tbody><tr><td align='center' valign='middle' rowspan='2'>
+<div class="plain_layout" id='magicparlabel-740'><em><span style='font-family:sans-serif;'>Method</span></em></div>
+</td>
+<td align='center' valign='top' colspan='2'>
+<div class="plain_layout" id='magicparlabel-743'><span style='font-family:sans-serif;'>3D Reconstruction</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-749'><em><span style='font-family:sans-serif;'>Semantic</span></em></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-755'><em><span style='font-family:sans-serif;'>Accuracy</span></em></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-758'><em><span style='font-family:sans-serif;'>Completeness</span></em></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-761'><em><span style='font-family:sans-serif;'>Accuracy</span></em></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-764'><span style='font-family:sans-serif;'>DTIS</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-767'><span style='font-family:sans-serif;'>0.25 m</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-770'><b><span style='font-family:sans-serif;'>27.1 %</span></b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-773'><b><span style='font-family:sans-serif;'>65.7 %</span></b></div>
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-776'><span style='font-family:sans-serif;'>HAB</span></div>
+</td>
+<td align='center' valign='top'>
+
+</td>
+<td align='center' valign='top'>
+
+</td>
+<td align='center' valign='top'>
+
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-788'><span style='font-family:sans-serif;'>LAPSI</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-791'><b><span style='font-family:sans-serif;'>0.15 m</span></b></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-794'><span style='font-family:sans-serif;'>13.7 %</span></div>
+</td>
+<td align='center' valign='top'>
+
+</td>
+</tr><tr><td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-800'><span style='font-family:sans-serif;'>Baseline</span></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-803'><em><span style='font-family:sans-serif;'>0.035 m</span></em></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-806'><em><span style='font-family:sans-serif;'>35.8 %</span></em></div>
+</td>
+<td align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-809'><em><span style='font-family:sans-serif;'>85.4 %</span></em></div>
+</td>
+</tr></tbody>
+</table>
+</span></div>
+
+<div class="standard" style='text-align: center;' id='magicparlabel-810'><span style='font-family:sans-serif;'>Validation set (Real data)</span></div>
+<div class="frame_item"></div>
+</div>
+
+<div class="standard" id='magicparlabel-812'><span style='font-family:sans-serif;'><br />
+
+</span></div>
+
+<div class="frame" id='magicparlabel-813'><div class="frame_item"><span class="frame_label">Frame</span>
+<span style='font-family:sans-serif;'><!-- Output Error: Closing tag `div' when other tags are open, namely: -->
+<!-- Output Error: span -->
+</span></div>
+
+<div class="itemize" id='magicparlabel-818'><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Best performers for <b>synthetic</b> data</span>
+
+<div class="itemize" id='magicparlabel-819'><div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>Semantic category: DTIS</span></div>
+<div class="itemize_item"><span class="itemize_label">–</span>
+<span style='font-family:sans-serif;'>3D Geometry category: HAB</span></div>
+</div>
+</div><div class="itemize_item"><span class="itemize_label">•</span>
+<span style='font-family:sans-serif;'>Best performer for <b>real</b> data: DTIS</span></div>
+</div>
+<div class="standard" id='magicparlabel-822'><span style='font-family:sans-serif;'><div style='height:2ex'></div><hr />
+
+</span></div>
+
+
+
+<div class="standard" id='magicparlabel-823'><b><span style='font-family:sans-serif;'><table><tbody><tr><td style ="width: 100%;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-833'><b><span style='font-family:sans-serif;'>Congratulations and thanks to all participants!</span></b></div>
+</td>
+</tr><tr><td style ="width: 100%;" align='center' valign='top'>
+<div class="plain_layout" id='magicparlabel-836'><span style='font-family:sans-serif;'>We are open to additional submissions.</span></div>
+</td>
+</tr></tbody>
+</table>
+</span></b></div>
+<div class="frame_item"></div>
+<div class="frame_item"></div>
+<div class="frame_item"></div>
+</div>
+</body>
+</html>

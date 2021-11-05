@@ -1,0 +1,61 @@
+
+%
+\begin{frame}{Evaluation: Summary of Performance}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+\multirow{2}{*}{\emph{Method}} & \multicolumn{2}{c|}{3D Reconstruction} & \emph{Semantic}\tabularnewline
+\cline{2-4} 
+ & \emph{Accuracy} & \emph{Completeness} & \emph{Accuracy}\tabularnewline
+\hline 
+\hline 
+DTIS & 0.122 m & 66.2 \% & \textbf{91.1 \%}\tabularnewline
+\hline 
+HAB & \textbf{0.069 m} & \textbf{74.0 \%} & 79.0 \%\tabularnewline
+\hline 
+LAPSI & 0.164 m & 23.9 \% & \tabularnewline
+\hline 
+Baseline & \emph{0.097 m} & \emph{86.4 \%} & \emph{90.2 \%}\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+\begin{center}
+Test set (Synthetic data)
+\par\end{center}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+\multirow{2}{*}{\emph{Method}} & \multicolumn{2}{c|}{3D Reconstruction} & \emph{Semantic}\tabularnewline
+\cline{2-4} 
+ & \emph{Accuracy} & \emph{Completeness} & \emph{Accuracy}\tabularnewline
+\hline 
+\hline 
+DTIS & 0.25 m & \textbf{27.1 \%} & \textbf{65.7 \%}\tabularnewline
+\hline 
+HAB &  &  & \tabularnewline
+\hline 
+LAPSI & \textbf{0.15 m} & 13.7 \% & \tabularnewline
+\hline 
+Baseline & \emph{0.035 m} & \emph{35.8 \%} & \emph{85.4 \%}\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+\begin{center}
+Validation set (Real data)
+\par\end{center}
+
+%
+\begin{itemize}
+\item Best performers for \textbf{synthetic} data
+\begin{itemize}
+\item Category A/B - 3D Semantic mesh: HAB
+\item Category C - 2D Semantic image annotations: DTIS
+\end{itemize}
+\item Best performer for \textbf{real} data: DTIS
+\end{itemize}
+\medskip{}
+\rule[0.5ex]{1\columnwidth}{1pt}
+
+

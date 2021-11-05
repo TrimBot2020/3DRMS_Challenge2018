@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CloudCompare>
+    <ColorScale version="1">
+        <Properties>
+            <name>SemanticGardenReduced</name>
+            <uuid>{5a2c0e52-5ad4-4cc7-9be2-815f55ecb972}</uuid>
+            <absolute>1</absolute>
+            <minValue>0</minValue>
+            <range>9</range>
+        </Properties>
+        <Data>
+            <step r="0" g="0" b="0" pos="0"/>
+            <step r="0" g="204" b="0" pos="0.111111111111"/>
+            <step r="77" g="128" b="0" pos="0.222222222222"/>
+            <step r="179" g="204" b="230" pos="0.333333333333"/>
+            <step r="128" g="128" b="0" pos="0.444444444444"/>
+            <step r="0" g="179" b="179" pos="0.555555555556"/>
+            <step r="230" g="0" b="0" pos="0.666666666667"/>
+            <step r="51" g="51" b="230" pos="0.777777777778"/>
+            <step r="77" g="179" b="26" pos="0.888888888889"/>
+            <step r="26" g="26" b="26" pos="1"/>
+        </Data>
+    </ColorScale>
+</CloudCompare>

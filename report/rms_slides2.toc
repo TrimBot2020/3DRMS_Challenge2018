@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Challenge Goals}{3}{0}{1}
+\beamer@sectionintoc {2}{Garden Dataset}{4}{0}{2}
+\beamer@sectionintoc {3}{Evaluation and Results}{11}{0}{3}

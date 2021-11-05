@@ -1,0 +1,12 @@
+Version: 1
+Semantic:
+  Unknown: 0      # 2D only - pixels to be ignored
+  Grass: 1
+  Ground: 2
+  Pavement: 3
+  Hedge: 4
+  Topiary: 5
+  Rose: 6
+  Obstacle: 7
+  Tree: 8
+  Background: 9   # 2D only - pixels from outside of garden

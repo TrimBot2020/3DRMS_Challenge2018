@@ -1,0 +1,5 @@
+## Allow to flag private files 
+~*
+*.bag
+*.avi
+*.zip
