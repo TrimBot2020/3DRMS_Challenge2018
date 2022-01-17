@@ -1,6 +1,6 @@
 # 3D Reconstruction meets Semantics 
 
-Part of the ECCV 2018 workshop [3D Reconstruction meets Semantics](http://trimbot2020.webhosting.rug.nl/events/3drms/) is a challenge on combining 3D and semantic information in complex scenes. 
+Part of the ECCV 2018 workshop [3D Reconstruction meets Semantics](http://trimbot2020.webhosting.rug.nl/events/3drms/) was a challenge on combining 3D and semantic information in complex scenes. 
 To this end, a challenging outdoor dataset, captured by a robot driving through a semantically-rich garden that contains fine geometric details, is released. 
 A multi-camera rig is mounted on top of the robot, enabling the use of both stereo and motion stereo information. 
 Precise ground truth for the 3D structure of the garden has been obtained with a laser scanner and accurate pose estimates for the robot are available as well. 
@@ -25,24 +25,15 @@ For a detailed discussion of the workshop challenge, please read our [ECCV paper
 ## Data
 
 ### Download
-_IMPORTANT_: Please install [git lfs](https://git-lfs.github.com/) before cloning this repository to retrieve PLY files.
-Then following commands are suggested to download the repository:
-```
-git lfs install
-git config --global credential.helper 'cache --timeout=28800'
-git config --global http.sslVerify false
-git clone https://username@gitlab.inf.ed.ac.uk/3DRMS/Challenge2018.git
-```
 
-_NOTE_: Due to bug in Gitlab server valid PLY files are not downloaded with ZIP web link. You can still download them via web individually.
-
-<!-- You can also use [alternative ZIP download](https://drive.google.com/drive/folders/1Rc36NjEyola_wNlFI-Edzd7GSxkmre2h?usp=sharing). Extract eg. using `7z e 3DRMS2018.zip.001`. -->
+Challenge dataset archives are hosted [here](https://homepages.inf.ed.ac.uk/rbf/TrimBot2020git/public/).
+Please use [`download.sh`](https://github.com/TrimBot2020/3DRMS_Challenge2017/blob/master/download.sh) script to retrieve training and test data (or see the script for manual download steps).
 
 ### Semantic Labels and Calibration
 
-* File [`labels.yaml`](https://gitlab.inf.ed.ac.uk/3DRMS/Challenge2018/blob/master/calibration/labels.yaml) - semantic label definition list
-* File [`colors.yaml`](https://gitlab.inf.ed.ac.uk/3DRMS/Challenge2018/blob/master/calibration/colors.yaml) - label color definition (for display)
-* File [`calibration/camchain-DDDD.yaml`](https://gitlab.inf.ed.ac.uk/3DRMS/Challenge2018/blob/master/calibration/camchain-2017-05-16-09-53-50.yaml) - camera rig calibration (for real data), [Kalibr format](https://github.com/ethz-asl/kalibr/wiki/yaml-formats)
+* File [`labels.yaml`](https://github.com/TrimBot2020/3DRMS_Challenge2018/blob/master/calibration/labels.yaml) - semantic label definition list
+* File [`colors.yaml`](https://github.com/TrimBot2020/3DRMS_Challenge2018/blob/master/calibration/colors.yaml) - label color definition (for display)
+* File [`calibration/camchain-DDDD.yaml`](https://github.com/TrimBot2020/3DRMS_Challenge2018/blob/master/calibration/camchain-2017-05-16-09-53-50.yaml) - camera rig calibration (for real data), [Kalibr format](https://github.com/ethz-asl/kalibr/wiki/yaml-formats)
 
 ### Training (Synthetic data)
 
@@ -163,7 +154,7 @@ Recommended viewer: [CloudCompare](http://www.cloudcompare.org/) - turn off norm
 
 ## Submission Categories
 
-This year we accept submissions in several categories: semantics and geometry, either joint or separate. 
+This challenge accepted submissions in several categories: semantics and geometry, either joint or separate. 
 For example, if you have a pipeline that first computes semantics and geometry independently and then fuses them, we can compare how the fused result improved accuracy.
 
 Once you have created the results in one or more categories below, please follow [instructions on the website](http://trimbot2020.webhosting.rug.nl/events/3drms/challenge/) to submit them.
@@ -171,7 +162,7 @@ Once you have created the results in one or more categories below, please follow
 
 In order to submit to the challenge, please create a semantically annotated 3D triangle mesh from the test sequence and validation sequence. 
 * The mesh should be stored in the [PLY text format](http://paulbourke.net/dataformats/ply/). 
-* The file should store for each triangle a color corresponding to the triangle’s semantic class (see the [`calibrations/colors.yaml`](https://gitlab.inf.ed.ac.uk/3DRMS/Challenge2018/blob/master/calibration/colors.yaml) file for the mapping between semantic classes and colors). 
+* The file should store for each triangle a color corresponding to the triangle’s semantic class (see the [`calibrations/colors.yaml`](https://github.com/TrimBot2020/3DRMS_Challenge2018/blob/master/calibration/colors.yaml) file for the mapping between semantic classes and colors). 
   * Semantic labels 'Unknown' and 'Background' are only for 2D images, and should not be present in the submitted 3D mesh, ie. only values 1-8 are valid.
 
 ### B. Geometric Mesh
@@ -183,13 +174,13 @@ Create a set of semantic image annotations for all views in the test, using the 
 
 ## Contact
 
-For questions and requests, please contact `rtylecek@inf.ed.ac.uk`.
+For questions and requests, please contact `radim.tylecek@gmail.com` or `rbf@inf.ed.ac.uk`.
 
 ## Credits
 
-Dataset composed by @hale and @rtylecek.
+Dataset composed by Hoang-An Le and Radim Tylecek.
 
-Please report any errors via [issue tracker](https://gitlab.inf.ed.ac.uk/3DRMS/Challenge2018/issues/new) or via email to rtylecek@inf.ed.ac.uk.
+Please report any errors via [issue tracker](https://github.com/TrimBot2020/3DRMS_Challenge2018/issues/new).
 
 ### Acknowledgements
 
