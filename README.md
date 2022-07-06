@@ -198,14 +198,3 @@ Please cite the following [paper](http://openaccess.thecvf.com/content_ECCVW_201
       year={2018},
       URL={http://trimbot2020.webhosting.rug.nl/events/3drms/challenge/}
     }
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43878247-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-43878247-2');
-</script>
-
