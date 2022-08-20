@@ -51,7 +51,6 @@ Please use [`download.sh`](https://github.com/TrimBot2020/3DRMS_Challenge2017/bl
 Total 20k images / 10k annotated stereo pairs / 25 GB
 
 * File `model_RRRR_SSSS.ply` - point cloud of scene SSSS with semantic labels (field `scalar_s`) at resolution RRRR
-    * Higher resolution point clouds are available from [here](https://drive.google.com/drive/folders/1n6wQbXVtL2dcUWTvOigL2HsVpywCet6y?usp=sharing) (too large for this repository) 
 * Folders `EEEE_SSSS` - sequences rendered from scene SSSS in environment EEEE
 * Subfolders `vcam_X`
     * Files `vcam_X_fXXXXX_gtr.png` - GT annotation with label set IDs (indexed bitmap)
